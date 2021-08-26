@@ -1,4 +1,4 @@
-# ChatWork-HelloWorld
+# Chatwork-HelloWorld
 
 This is a repository with simple samples for getting started with interacting with the
 ChatWork API. Information on the API itself can be found [here](https://download.chatwork.com/ChatWork_API_Documentation.pdf) and details on the
@@ -42,4 +42,59 @@ the copied value of your API token.
 
 ```
 $ echo "CHATWORK_TOKEN=[YOUR_API_TOKEN]" > .env
+```
+
+## Post a Message
+
+For the first example, we will do a classic "Hello World" to see if we can post a message to the
+default "MyRoom" included with each new account. First we compile the ```hello.ts`` file.
+
+```
+$ tsc hello.ts
+```
+
+And then we run with:
+
+```
+$ node hello.js
+Arren Maxwell
+[
+  {
+    room_id: 241035249,
+    name: 'マイチャット',
+    type: 'my',
+    role: 'member',
+    sticky: true,
+    unread_num: 0,
+    mention_num: 0,
+    mytask_num: 0,
+    message_num: 11,
+    file_num: 8,
+    task_num: 0,
+    icon_path: 'https://appdata.chatwork.com/avatar/ico_default_green.png',
+    last_update_time: 1629942433
+  }
+]
+{ message_id: '1482556736417079296' }
+```
+
+The result should look like the following.
+
+
+![Screenshot from 2021-08-26 10-52-03](https://user-images.githubusercontent.com/5259968/130887280-0b253439-f6b6-458e-ae69-bbd17c9d8b72.png)
+
+## Post a File
+
+The second example is posting a file. We will post two files. And example png with the WSD logo,
+and a dummy pdf file to show the sample works with different file types. These files are included
+in the ```data``` folder. First we compile the ```uploadFile.ts``` file.
+
+```
+$ tsc uploadFile.ts
+```
+
+And then we run with:
+
+```
+node uploadFile.js
 ```
